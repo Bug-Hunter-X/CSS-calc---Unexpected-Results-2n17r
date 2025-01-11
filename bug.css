@@ -1,0 +1,11 @@
+The CSS property `calc()` can sometimes lead to unexpected results if not used carefully.  For example, consider this code:
+
+```css
+.element {
+  width: calc(100% - 10px);
+}
+```
+
+If the parent element of `.element` has a width less than 10px, `calc()` will return a negative value, resulting in unexpected behavior.
+
+Another common issue is the usage of units within `calc()`.  Make sure that all units are consistent. Mixing units (e.g. `px` and `%`) within the calculation can cause rendering problems.
