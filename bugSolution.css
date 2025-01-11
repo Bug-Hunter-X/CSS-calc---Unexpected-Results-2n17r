@@ -1,0 +1,21 @@
+To resolve the issues demonstrated in `bug.css`, we should add checks and use appropriate units.  For example:
+
+```css
+.element {
+  width: calc(min(100%, 10px)); /* Prevents negative widths */
+  width: calc(100% - 10px);
+}
+.parent{
+  width:20px;
+}
+```
+
+This ensures that the `width` is never negative. Alternatively, you can use `max()` function to enforce a minimum size:
+
+```css
+.element {
+  width: calc(max(0, 100% - 10px));
+}
+```
+
+Always make sure all units within the `calc()` function are consistent to avoid rendering problems.
